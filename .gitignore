@@ -1,0 +1,41 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Virtual Environment
+venv/
+.env
+
+# Streamlit
+.streamlit/
+
+# Vector Database
+vectordb/
+
+# Uploaded files
+uploads/
+
+# Generated outputs
+outputs/
+
+# Mac system files
+.DS_Store
+
+# Logs
+*.log
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Temporary files
+temp/
+tmp/
+venv/
+vectordb/
+outputs/
+__pycache__/
+*.pyc
+.env
+.DS_Store
