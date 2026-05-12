@@ -37,5 +37,16 @@ vectordb/
 outputs/
 __pycache__/
 *.pyc
+.env
+.DS_Store
+venv/
+.venv/
+ocrenv/
+vectordb/
+outputs/
+__pycache__/
+*.pyc
 .env.examples
 .DS_Store
+
+
