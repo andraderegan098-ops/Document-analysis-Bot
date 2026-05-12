@@ -4,20 +4,23 @@ __pycache__/
 *.pyo
 *.pyd
 
-# Virtual Environment
+# Virtual Environments
 venv/
+.venv/
+ocrenv/
+
+# Environment variables
 .env.examples
 
 # Streamlit
 .streamlit/
 
-# Vector Database
+# Vector Databases
 vectordb/
+vectordbs/
 
-# Uploaded files
+# Uploaded files & outputs
 uploads/
-
-# Generated outputs
 outputs/
 
 # Mac system files
@@ -32,10 +35,3 @@ outputs/
 # Temporary files
 temp/
 tmp/
-venv/
-vectordb/
-outputs/
-__pycache__/
-*.pyc
-.env.examples
-.DS_Store
