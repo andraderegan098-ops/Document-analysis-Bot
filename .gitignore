@@ -10,7 +10,6 @@ venv/
 ocrenv/
 
 # Environment variables
-.env.examples
 
 # Streamlit
 .streamlit/
