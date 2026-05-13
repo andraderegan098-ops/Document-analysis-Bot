@@ -424,7 +424,18 @@ def _run_rag_turn(user_input_en: str, vectorstore, reranker, llm):
     try:
         response = llm.invoke(messages)
         text = response.content if isinstance(response.content, str) else ""
-        tool_results = [_dispatch_tool(t) for t in (response.tool_calls or [])]
+
+        # ── FIX: inject the LLM's response as the PDF content if the tool
+        #         was called without report_text (which is the common case when
+        #         the LLM writes its answer into response.content and separately
+        #         triggers the tool with an empty or missing argument).
+        tool_calls = response.tool_calls or []
+        for tc in tool_calls:
+            if tc["name"] == "generate_pdf_tool" and text:
+                if not tc["args"].get("report_text"):
+                    tc["args"]["report_text"] = text
+
+        tool_results = [_dispatch_tool(t) for t in tool_calls]
         return text, tool_results
     except Exception as e:
         return f"Error: {e}", []
